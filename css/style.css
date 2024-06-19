@@ -13,7 +13,6 @@ body{
     display: flex;
     align-self: flex-start;
     flex-direction: column;
-    align-items: center;
     margin: 1em;
 }
 
@@ -43,13 +42,15 @@ body{
 }
 
 .li-titleDiv{
-    font-weight: 650;
-    font-size: x-large;
     margin-block-end: 1em;
 }
 
 .li-textDiv{
     font-size: large;
+}
+
+.header{
+    margin: 0;
 }
 
 .buttons-div{
@@ -77,4 +78,37 @@ body{
     margin-inline: 10px;
     translate: 0;
     cursor: auto;
+}
+
+/* Blog page */
+/* ------------------------- */
+h2{
+    margin: 0;
+    margin-left: 0.7em;
+}
+
+.li-post{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-radius: 0.5em;
+    border-color: black;
+    margin-bottom: 1em;
+    padding: 1em;
+    max-width: 70em;
+    transition: 0.5s;
+}
+
+.li-comment{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-radius: 0.5em;
+    border-color: black;
+    margin: 1em;
+    padding: 1em;
+    max-width: 70em;
+    transition: 0.5s;
 }

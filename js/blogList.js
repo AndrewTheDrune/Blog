@@ -15,13 +15,18 @@ async function displayPosts(page = 1){
     pagination = (await fetchGETPage(page)).pagination;
     pageNumber.innerHTML = pagination.page;
 
-    // console.log(pagination);
-    // const id = await fetchGETPost(127992);
-    // console.log(id);
-
     const result = await fetchGETPage(page);
-    console.log(result.posts);
+    console.log(pagination);
 
+    if (pagination.links.previous === null) {
+        previousButton.disabled = true;
+        firstButton.disabled = true;
+    }
+    if (pagination.links.next === null) {
+        nextButton.disabled = true;
+        lastButton.disabled = true;
+    }
+    
     for (let post = result.posts.length - 1; post >= 0; post--){
         const li = createListItem(result.posts[post].title, result.posts[post].body, result.posts[post].id);
         li.addEventListener("click", async (event) => {
